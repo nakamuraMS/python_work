@@ -1,0 +1,5 @@
+include sample/scripts/R5Contest/raySample/MANIFEST.in.fragment
+recursive-include sample/scripts/R5Contest/raySample *.py
+recursive-include sample/scripts/R5Contest/raySample *.json
+recursive-include sample/scripts/R5Contest/raySample *.yaml
+recursive-exclude sample/scripts/R5Contest/raySample *.pyc

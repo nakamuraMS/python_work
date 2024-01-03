@@ -1,0 +1,20 @@
+version: "3"
+services:
+  dev1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    container_name: atla_gui
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/workspace
+    tty: true
+    user: root

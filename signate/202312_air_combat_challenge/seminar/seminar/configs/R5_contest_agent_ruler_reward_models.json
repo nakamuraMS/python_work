@@ -1,0 +1,343 @@
+{"Factory":{
+    "Agent":{
+        "MyAgentSample01S":{
+            "class":"R5AgentSample01S",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "step":1.0,
+                    "perceive":0.1,
+                    "control":0.05,
+                    "behave":0.1
+                },
+                
+                "maxTrackNum":{
+                    "Friend":2,
+                    "Enemy":2
+                },
+                "maxMissileNum":{
+                    "Friend":8,
+                    "Enemy":4
+                },
+                "horizontalNormalizer":50000.0,
+                "verticalNormalizer":20000.0,
+                "fgtrVelNormalizer":300.0,
+                "mslVelNormalizer":1200.0,
+                "use_image_observation":false,
+                "image_longitudinal_resolution":24,
+                "image_lateral_resolution":24,
+                "image_front_range":50000.0,
+                "image_back_range":0.0,
+                "image_side_range":25000.0,
+                "image_horizon":60,
+                "image_interval":1,
+                "image_rotate":false,
+                "image_relative_position":false,
+                "use_vector_observation":true,
+                "include_last_action":true,
+                "vector_past_points":[],
+
+                "flatten_action_space":false,
+                "dstAz_relative":true,
+                "turnTable":[-45,-30,-15,-10,-5,0,5,10,15,30,45],
+                "use_override_evasion":false,
+                "evasion_turnTable":[-45,-30,-15,-10,-5,0,5,10,15,30,45],
+                "use_altitude_command":false,
+                "altTable":[-8000,-4000,-2000,-1000,0,1000,2000,4000,8000],
+                "refAltInterval":1000,
+                "pitchTable":[-45,-30,-15,-10,-5,0,5,10,15],
+                "accelTable":[-10.0,-5.0,-2.5,0.0,2.5,5.0,10.0],
+                "always_maxAB":true,
+                "use_Rmax_fire":true,
+                "shotIntervalTable":[5,10,20,40,80],
+                "shotThresholdTable":[0.0,0.1,0.2,0.3,0.4,0.5],
+
+                "altMin":2000,
+                "altMax":15000,
+                "dOutLimit":7500,
+                "dOutLimitThreshold":15000,
+                "dOutLimitStrength":1e-3,
+                "maxSimulShot":4,
+                "minimumV":150.0,
+                "minimumRecoveryV":180.0,
+                "minimumRecoveryDstV":200.0,
+
+                "altitudeKeeper":{
+                    "pGain":-3e-1,
+                    "dGain":-1e-1,
+                    "minPitch":-0.524,
+                    "maxPitch":0.524
+                }
+            }
+        },
+        "MyAgentSample01M":{
+            "class":"R5AgentSample01M",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "step":1.0,
+                    "perceive":0.1,
+                    "control":0.05,
+                    "behave":0.1
+                },
+                
+                "maxTrackNum":{
+                    "Friend":2,
+                    "Enemy":2
+                },
+                "maxMissileNum":{
+                    "Friend":8,
+                    "Enemy":4
+                },
+                "horizontalNormalizer":50000.0,
+                "verticalNormalizer":20000.0,
+                "fgtrVelNormalizer":300.0,
+                "mslVelNormalizer":1200.0,
+                "use_image_observation":false,
+                "image_longitudinal_resolution":24,
+                "image_lateral_resolution":24,
+                "image_front_range":50000.0,
+                "image_back_range":0.0,
+                "image_side_range":25000.0,
+                "image_horizon":60,
+                "image_interval":1,
+                "use_vector_observation":true,
+                "include_last_action":true,
+                "vector_past_points":[],
+
+                "flatten_action_space":false,
+                "dstAz_relative":true,
+                "turnTable":[-45,-30,-15,-10,-5,0,5,10,15,30,45],
+                "use_override_evasion":false,
+                "evasion_turnTable":[-45,-30,-15,-10,-5,0,5,10,15,30,45],
+                "use_altitude_command":false,
+                "altTable":[-8000,-4000,-2000,-1000,0,1000,2000,4000,8000],
+                "refAltInterval":1000,
+                "pitchTable":[-45,-30,-15,-10,-5,0,5,10,15],
+                "accelTable":[-10.0,-5.0,-2.5,0.0,2.5,5.0,10.0],
+                "always_maxAB":true,
+                "use_Rmax_fire":true,
+                "shotIntervalTable":[5,10,20,40,80],
+                "shotThresholdTable":[0.0,0.1,0.2,0.3,0.4,0.5],
+
+                "altMin":2000,
+                "altMax":15000,
+                "dOutLimit":7500,
+                "dOutLimitThreshold":15000,
+                "dOutLimitStrength":1e-3,
+                "maxSimulShot":4,
+                "minimumV":150.0,
+                "minimumRecoveryV":180.0,
+                "minimumRecoveryDstV":200.0,
+
+                "altitudeKeeper":{
+                    "pGain":-3e-1,
+                    "dGain":-1e-1,
+                    "minPitch":-0.524,
+                    "maxPitch":0.524
+                }
+            }
+        },
+        "CombinedMyAgent":{
+            "class":"SimpleMultiPortCombiner",
+            "config":{
+                "children":{
+                    "0":{"name":"child0","model":"MyAgentSample01S"},
+                    "1":{"name":"child1","model":"MyAgentSample01S"}
+                }
+            }
+        },
+        "DualRandomInitial":{
+            "class":"MultiPortCombiner",
+            "config":{
+                "children":{
+                    "0":{"name":"child0","model":"R5RandomInitial"},
+                    "1":{"name":"child1","model":"R5RandomInitial"}
+                }
+            }
+        }
+    },
+    "Ruler":{
+        "R5ContestRuler":{
+            "class":"R5AirToAirCombatRuler01",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "value":0.1
+                },
+                "maxTime":300,
+                "minTime":1000,
+                "dLine":25000,
+                "dOut":25000,
+                "hLim":20000,
+                "westSider":"Red",
+                "eastSider":"Blue",
+                "pDisq": -10,
+                "pBreak": 0.0,
+                "pHit": {
+                    "R5ContestFighter":1.0
+                },
+                "pCrash": {
+                    "R5ContestFighter":1.0
+                },
+                "pAlive": {
+                    "R5ContestFighter":0.0
+                },
+                "pAdv": 0.0,
+                "pOut": 0.01,
+                "applyDOutBeyondLine":true,
+                "pHitPerAircraft": true,
+                "pCrashPerAircraft": true,
+                "pAlivePerAircraft": true,
+                "enableAdditionalTime": true,
+                "terminalAtElimination": true,
+                "terminalAtBreak": false,
+                "considerFuelConsumption": false,
+                "fuelMargin": 0.0,
+                "distanceFromBase": {
+                    "Red":0.0,
+                    "Blue":0.0
+                },
+                "modelNamesToBeConsideredForBreak": {
+                    "Red":[],
+                    "Blue":[]
+                },
+                "modelNamesToBeExcludedForBreak": {
+                    "Red":[],
+                    "Blue":[]
+                },
+                "modelNamesToBeConsideredForElimination": {
+                    "Red":["Any"],
+                    "Blue":["Any"]
+                },
+                "modelNamesToBeExcludedForElimination": {
+                    "Red":[],
+                    "Blue":[]
+                }
+            }
+        }
+    },
+    "Reward":{
+        "MyRewardSample01":{
+            "class":"R5RewardSample01",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "value":0.1
+                },
+                "pBite":0.0,
+                "pMemT":0.0,
+                "pDetect":0.0,
+                "pVel":0.0,
+                "pOmega":0.0,
+                "pLine":0.0,
+                "pEnergy":0.0,
+                "pLineAsPeak":false
+            }
+        },
+        "MyWinLoseReward":{
+            "class":"WinLoseReward",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "value":0.1
+                },
+                "win":2.0,
+                "lose":-2.0,
+                "draw":0.0
+            }
+        },
+        "MyReward01-1":{
+            "class":"R5AirToAirCombatBasicReward01",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "value":0.1
+                },
+                "rElim":0.0,
+                "rElimE":0.0,
+                "rBreakRatio":0.0,
+                "rBreak":0.0,
+                "rBreakE":0.0,
+                "adjustBreakEnd":true,
+                "rTimeup":0.0,
+                "rDisq":0.0,
+                "rDisqE":0.0,
+                "rHitRatio":0.0,
+                "rHit":{"Default":0.0},
+                "rHitE":{"Default":-0.0},
+                "rAdvRatio":0.0,
+                "acceptNegativeAdv":true,
+                "rCrashRatio":0.0,
+                "rCrash":{"Default":0.0},
+                "rCrashE":{"Default":0.0},
+                "rAliveRatio":0.0,
+                "rAlive":{"Default":0.0},
+                "rAliveE":{"Default":-0.0},
+                "rOutRatio":0.0,
+                "adjustZerosum":true,
+                "rHitPerAircraft": true,
+                "rHitEPerAircraft": true,
+                "rCrashPerAircraft": true,
+                "rCrashEPerAircraft": true,
+                "rAlivePerAircraft": true,
+                "rAliveEPerAircraft": true
+            }
+        },
+        "MyReward01-2":{
+            "class":"R5AirToAirCombatBasicReward01",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "value":0.1
+                },
+                "rElim":0.0,
+                "rElimE":0.0,
+                "rBreakRatio":-1.0,
+                "rBreak":0.0,
+                "rBreakE":0.0,
+                "adjustBreakEnd":true,
+                "rTimeup":0.0,
+                "rDisq":0.0,
+                "rDisqE":0.0,
+                "rHitRatio":-1.0,
+                "rHit":{"Default":0.0},
+                "rHitE":{"Default":-0.0},
+                "rAdvRatio":-1.0,
+                "acceptNegativeAdv":false,
+                "rCrashRatio":-1.0,
+                "rCrash":{"Default":0.0},
+                "rCrashE":{"Default":0.0},
+                "rAliveRatio":0.0,
+                "rAlive":{"Default":0.0},
+                "rAliveE":{"Default":-0.0},
+                "rOutRatio":0.0,
+                "adjustZerosum":false,
+                "rHitPerAircraft": true,
+                "rHitEPerAircraft": true,
+                "rCrashPerAircraft": true,
+                "rCrashEPerAircraft": true,
+                "rAlivePerAircraft": true,
+                "rAliveEPerAircraft": true
+            }
+        },
+        "MyReward02":{
+            "class":"R5RewardSample02",
+            "config":{
+                "interval":{
+                    "unit":"time",
+                    "value":0.1
+                },
+                "pAvoid":0.0,
+                "pHitE_head":-0.0,
+                "pHitE_tail":0.0,
+                "pCrash":-0.0,
+                "pHit_head":0.0,
+                "pHit_tail":0.0,
+                "pOut":-0.0,
+                "pAlive":0.0,
+                "pFuelShortage":0.0
+            }
+        }
+    }
+}}

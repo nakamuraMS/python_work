@@ -1,0 +1,28 @@
+{
+    "head_ip_address":"auto",
+    "entrypoint_ip_address":"127.0.0.1",
+    "seed":12345,
+    "env_config":{
+        "config":[
+        "./configs/R5_contest_mission_config.json",
+        "./configs/R5_contest_gathering_config_S.json",
+        "./configs/R5_contest_asset_models.json",
+        "./configs/R5_contest_agent_ruler_reward_models.json",
+        {"Manager":{"ViewerType":"None"}}
+        ]
+    },
+    "num_workers":16,
+    "num_episodes_per_worker":10,
+    "save_dir":"./experts/Single/",
+    "initial_state_lower":{
+        "pos": [-10000.0,20000.0,-12000.0],
+        "vel": 260.0,
+        "heading": 225.0
+    },
+    "initial_state_upper":{
+        "pos": [10000.0,25000.0,-6000.0],
+        "vel": 280.0,
+        "heading": 315.0
+    }
+}
+

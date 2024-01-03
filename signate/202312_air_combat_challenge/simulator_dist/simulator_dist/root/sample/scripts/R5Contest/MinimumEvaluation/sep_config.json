@@ -1,0 +1,13 @@
+{
+    "Blue":{
+        "server":"127.0.0.1",
+        "agentPort":51000,
+        "policyPort":51001
+    },
+    "Red":{
+        "server":"127.0.0.1",
+        "agentPort":51002,
+        "policyPort":51003
+    },
+    "seed":null
+}

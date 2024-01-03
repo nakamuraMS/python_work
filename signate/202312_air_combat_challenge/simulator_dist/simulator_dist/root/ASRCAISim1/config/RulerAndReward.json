@@ -1,0 +1,97 @@
+{"Factory":{
+	"Ruler":{
+		"R5AirToAirCombatRuler01":{
+			"class":"R5AirToAirCombatRuler01",
+			"config":{
+				"interval":{
+					"unit":"time",
+					"value":0.1
+				},
+				"maxTime":1200,
+				"dLine":100000,
+				"dOut":75000,
+				"hLim":20000,
+				"westSider":"Red",
+				"eastSider":"Blue",
+				"pDisq": -10,
+				"pBreak": 1,
+				"pDown": {"Default":1.0},
+				"pAdv": 0.01,
+				"pOut": 0.01,
+                "variablePDown": true,
+                "enableAdditionalTime": true,
+                "modelNamesToBeConsideredForBreak": {
+                    "Red":["Any"],
+                    "Blue":["Any"]
+                },
+                "modelNamesToBeExcludedForBreak": {
+                    "Red":[],
+                    "Blue":[]
+                },
+                "modelNamesToBeConsideredForElimination": {
+                    "Red":["Any"],
+                    "Blue":["Any"]
+                },
+                "modelNamesToBeExcludedForElimination": {
+                    "Red":[],
+                    "Blue":[]
+                }
+			}
+		}
+	},
+	"Reward":{
+		"WinLoseReward":{
+			"class":"WinLoseReward",
+			"config":{
+				"interval":{
+					"unit":"time",
+					"value":0.1
+				},
+				"win":1.0,
+				"lose":-1.0,
+				"draw":0.0
+			}
+		},
+		"ScoreReward":{
+			"class":"ScoreReward",
+			"config":{
+				"interval":{
+					"unit":"time",
+					"value":0.1
+				}
+			}
+		},
+		"R5AirToAirCombatBasicReward01":{
+			"class":"R5AirToAirCombatBasicReward01",
+			"config":{
+				"interval":{
+					"unit":"time",
+					"value":0.1
+				},
+				"rElim":0.0,
+				"rElimE":0.0,
+				"rBreakRatio":0.0,
+				"rBreak":0.0,
+				"rBreakE":0.0,
+				"adjustBreakEnd":true,
+				"rTimeup":0.0,
+				"rDisq":0.0,
+				"rDisqE":0.0,
+				"rHitRatio":0.0,
+				"rHit":{"Default":0.0},
+				"rHitE":{"Default":0.0},
+				"rAdvRatio":0.0,
+				"acceptNegativeAdv":false,
+				"rCrashRatio":0.0,
+				"rCrash":{"Default":0.0},
+				"rCrashE":{"Default":0.0},
+				"rOutRatio":0.0,
+				"adjustZerosum":true,
+                "variableRHit": true,
+                "variableRHitE": true,
+                "variableRCrash": true,
+                "variableRCrashE": true
+			}
+		}
+	}
+}}

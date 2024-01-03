@@ -1,0 +1,62 @@
+{"Factory":{
+    "Ruler":{
+        "R5ContestRuler":{
+            "class":"R5AirToAirCombatRuler01",
+            "config":{
+				"interval":{
+					"unit":"time",
+					"value":0.1
+				},
+                "maxTime":300,
+                "minTime":1000,
+                "dLine":25000,
+                "dOut":25000,
+                "hLim":20000,
+                "westSider":"Red",
+                "eastSider":"Blue",
+                "pDisq": -10,
+                "pBreak": 0.0,
+                "pHit": {
+                    "R5ContestFighter":1.0
+                },
+                "pCrash": {
+                    "R5ContestFighter":1.0
+                },
+                "pAlive": {
+                    "R5ContestFighter":0.0
+                },
+                "pAdv": 0.0,
+                "pOut": 0.01,
+                "applyDOutBeyondLine":true,
+                "pHitPerAircraft": true,
+                "pCrashPerAircraft": true,
+                "pAlivePerAircraft": true,
+                "enableAdditionalTime": true,
+                "terminalAtElimination": true,
+                "terminalAtBreak": false,
+                "considerFuelConsumption": false,
+                "fuelMargin": 0.0,
+                "distanceFromBase": {
+                    "Red":0.0,
+                    "Blue":0.0
+                },
+                "modelNamesToBeConsideredForBreak": {
+                    "Red":[],
+                    "Blue":[]
+                },
+                "modelNamesToBeExcludedForBreak": {
+                    "Red":[],
+                    "Blue":[]
+                },
+                "modelNamesToBeConsideredForElimination": {
+                    "Red":["Any"],
+                    "Blue":["Any"]
+                },
+                "modelNamesToBeExcludedForElimination": {
+                    "Red":[],
+                    "Blue":[]
+                }
+            }
+        }
+    }
+}}
