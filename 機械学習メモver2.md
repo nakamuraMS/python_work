@@ -34,9 +34,11 @@
 
 >> Accuracy(正解率)  
 >>> 予想結果が実際に当たっていた割合  
+
 >> Precision(適合率)  
 >>> 陽性であると予測したもののうち、実際に陽性だった割合  
 >>> 誤判定を避けたい場合はこれを重視  
+
 >> Recall(真陽性率、再現率)  
 >>> 実際に陽性であるもののうち、正しく陽性であると予測できた割合  
 >>> 見落としを避けたい場合はこれを重視  
@@ -98,45 +100,51 @@
 > ワンホットエンコード【OneHotEncoder】
 
 ## データ分割
-> 学習データとテストデータへの分割【train_test_split】
-> K-分割交差検証【KFold】
-> 層化K-分割交差検証【StratifiedKFold】
-> グループ付き交差検証【GroupKFold】
-> 時系列データ分割【TimeSeriesSplit】
+- 学習データとテストデータへの分割【train_test_split】
+- K-分割交差検証【KFold】
+- 層化K-分割交差検証【StratifiedKFold】
+- グループ付き交差検証【GroupKFold】
+- 時系列データ分割【TimeSeriesSplit】
 
 ## 教師あり学習
 > 線形回帰【LinearRegression】
-    >> 単回帰分析
-    >> 重回帰分析
+>> 単回帰分析  
+>> 重回帰分析
+
 > ロジスティック回帰【LogisticRegression】
-    >> 2値分類
-    >> 多値分類
+>> 2値分類  
+>> 多値分類
+
 > ランダムフォレスト【RandomForest】
-    >> 分類
-    >> 回帰
+>> 分類  
+>> 回帰
+
 > サポートベクターマシン【SupportVectorMachine】
-    >> サポートベクターマシンを使った分類【GridSearchCV】
+>> サポートベクターマシンを使った分類【GridSearchCV】
+
 > K近傍法【K-NearestNeighbor】
-    >> 分類
-    >> 回帰
+>> 分類  
+>> 回帰
 
 ## 教師なし学習
 > PCA【Principal Component Analysis】
+
 > k-means法
-    >> クラスタリング（分類）
-    >> エルボー法を使ったk-meansクラスタリング
+>> クラスタリング（分類）  
+>> エルボー法を使ったk-meansクラスタリング
+
 > t-SNE
-    >> t-SNEを使った次元圧縮
+>> t-SNEを使った次元圧縮
 
 ## 機械学習モデルの評価
 ### 分類問題に対しての評価
-> AccuracyScore
-> ConfusionMatrix【混合行列】
+> AccuracyScore  
+> ConfusionMatrix【混合行列】  
 > ClassificationReport
 
 ### 回帰問題に対しての評価
-> MeanAbsoluteError【平均絶対誤差】
-> MeanSquaredError【平均二乗誤差】
+> MeanAbsoluteError【平均絶対誤差】  
+> MeanSquaredError【平均二乗誤差】  
 > R²Score【決定係数】
 
 
